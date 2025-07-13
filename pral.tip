@@ -48,7 +48,5 @@ $encodedCmd = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes
 # ===== Launch PowerShell as admin user with bypass =====
 Start-Process -FilePath "powershell.exe" `
     -Credential $cred `
-    -ArgumentList "-NoProfile -EncodedCommand $encodedCmd" `
-    -WindowStyle Hidden `
-    -LoadUserProfile `
+-ArgumentList "-NoProfile -Command $CmdToRun" `
     -Wait
